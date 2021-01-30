@@ -118,16 +118,16 @@
 
             </div>
                 </div>
-        
+
         
     </main>
-    
+
 
     <!--Thank You-->
     <script>
        const previousSubTotalPrice = document.getElementById("subtotal");
        
-            //first class
+            //first class increase decrease
             function handleFirstClass(isIncrease){
             const firstClassInput =   document.getElementById("firstClassInput");
             const firstClassTotal = parseInt(firstClassInput.value);
@@ -142,7 +142,7 @@
             calculateTotal()
           }
 
-            //economyClassInput
+            //economyClassInput increase decrease
             function handleeEonomClass(isIncrease){
             const economyClassInput =   document.getElementById("economyClassInput");
             const economyClassTotal = parseInt(economyClassInput.value);
@@ -156,32 +156,32 @@
             economyClassInput .value = economyClassNewInput;
             calculateTotal()
             }
+            //total calculation tax,subtotal,total
             
             function calculateTotal(){
-               const lastInputFirstClass = document.getElementById('firstClassInput');
-               const lastFirstClassInput = parseInt(lastInputFirstClass.value);
+            const lastInputFirstClass = document.getElementById('firstClassInput');
+            const lastFirstClassInput = parseInt(lastInputFirstClass.value);
 
-               const lastInputEconomyClass = document.getElementById('economyClassInput');
-               const lastEconomyClassInput = parseInt(lastInputEconomyClass.value);
+            const lastInputEconomyClass = document.getElementById('economyClassInput');
+            const lastEconomyClassInput = parseInt(lastInputEconomyClass.value);
                
-               const totalPrice = lastFirstClassInput * 150 + lastEconomyClassInput * 100;
-               previousSubTotalPrice.innerText = totalPrice;
+            const totalPrice = lastFirstClassInput * 150 + lastEconomyClassInput * 100;
+            previousSubTotalPrice.innerText = totalPrice;
 
-               const tax = totalPrice * 0.01;
-               document.getElementById('tax-value').innerText = tax;
+            const tax = totalPrice * 0.10;
+            document.getElementById('tax-value').innerText = tax;
 
-               const grandTotal = tax + totalPrice;
-               document.getElementById('total-amount').innerText = grandTotal;
+            const grandTotal = tax + totalPrice;
+            document.getElementById('total-amount').innerText = grandTotal;
 
             }
+            //greeting part
             const checkout = document.getElementById('checkout').addEventListener('click',function(){
               const checkOutAll =  document.getElementById('greeting');
               checkOutAll.style.display = "none";
              const confirmation = document.getElementById('greeting-back');
              confirmation.style.display = "block";
-            })
-            
-            
+            })      
 
     </script>
 </body>
